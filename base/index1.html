@@ -1,0 +1,30 @@
+<html>
+    <body>
+
+        <div id="app"></div>
+
+
+        <script>
+            // Imperative Code
+
+            
+            // app div
+            const app = document.getElementById('app')
+
+            // create new h1 Element
+            const header = document.createElement('h1')
+
+            // create textnode
+            const headerContent = document.createTextNode(
+                'Develop. Preview. Ship. 🚀',
+            )
+
+            // append the text to h1
+            header.appendChild(headerContent)
+
+            // place the h1 element in the div
+            app.appendChild(header)
+
+        </script>
+    </body>
+</html>

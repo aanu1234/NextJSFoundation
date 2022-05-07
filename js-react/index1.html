@@ -1,0 +1,73 @@
+<html>
+    <body>
+        <div id="app"></div>
+        <!-- React Example and Overvies -->
+        <!-- Component, props and state -->
+        <!-- Component is also a function -->
+        <!-- props is property passed into component  -->
+        <!-- state is used to modified or make an events to UI -->
+        <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+        <!-- Babel Script -->
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+        <!-- Declarative Code  -->
+        <script type="text/jsx">
+            const app = document.getElementById('app');
+
+            // object property
+            //function Header (props) {
+            //    return <h1>{props.title}</h1>
+            //}
+
+            // returned value of a function
+            // function createTitle(title) {
+            //    if( title ) return title;
+            //    return 'Default title';
+            // }
+            // function Header ({title}) {
+            //    return <h1>{createTitle(title)}</h1>;
+            // }
+
+            // ternary operators
+            function Header ({title}) {
+                return <h1>{title ? title : 'Default title'}</h1>
+            }
+
+
+            //function Page () {
+            //    return (
+            //        <div>
+            //            <Header title="React 💙" />
+            //           <Header title="Default Title"/>
+            //       </div>
+            //    );
+            //}
+            
+            function HomePage () {
+                //const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
+                
+                const [likes, setLikes] = React.useState(0);
+
+                function handleClick() {
+                    setLikes(likes+1)
+                }
+                return (
+                    <div>
+                        { /* Nesting the Header omponents
+                        <Header title="React 💙"/ >
+                        <Header title="Develop. Preview. Ship. 🚀" />*/}
+                        {/* Iterating through list
+                        <ul>
+                            {names.map((name) => (
+                                <li key={name}>{name}</li>
+                            ))}
+                        </ul>*/}
+                        <button onClick={handleClick}>Like({likes})</button>
+                    </div>
+                );
+            }
+            ReactDOM.render(<HomePage />, app);
+        </script>
+    </body>
+</html>
